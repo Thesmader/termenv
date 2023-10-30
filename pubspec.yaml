@@ -1,7 +1,11 @@
 name: termenv
-description: A starting point for Dart libraries or applications.
+description: Advanced styling for terminal emulators
 version: 0.0.1
 repository: https://github.com/Thesmader/termenv
+
+platforms:
+  linux:
+  macos:
 
 environment:
   sdk: ^3.1.4
