@@ -8,3 +8,9 @@ const seqOSC = '$seqESC]';
 const seqST = seqESC + r'\';
 
 Profile colorProfile() => output.colorProfile();
+
+String hyperlink({required String link, required String text}) =>
+    output.hyperlink(link: link, text: text);
+
+void notify({required String title, required String body}) =>
+    output.notify(title: title, body: body);

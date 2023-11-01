@@ -3,6 +3,7 @@ import 'dart:io';
 import 'color.dart';
 import 'profile.dart';
 import 'style.dart';
+import 'termenv.dart';
 
 /// Default global output
 var output = Output();
@@ -38,6 +39,9 @@ class Output {
     }
     return profile;
   }
+
+  String hyperlink({required String link, required String text}) =>
+      '${seqOSC}8;;$link$seqST$text${seqOSC}8;;$seqST';
 
   Profile colorProfile() {
     if (!_isTTY()) {
@@ -117,5 +121,9 @@ class Output {
     }
 
     return stdout.hasTerminal;
+  }
+
+  void notify({required String title, required String body}) {
+    stdout.write('${seqOSC}777;notify;$title;$body$seqST');
   }
 }

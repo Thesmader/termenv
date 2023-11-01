@@ -31,9 +31,9 @@ void main() {
   gray = termenv.string('gray').foreground(p.color('0')).background(p.color("#B9BFCA"));
 
   print('\n\t$red $green $yellow $blue $magenta $cyan $gray');
-  print('\n');
+  print('');
 
-  print('\n\tStyles can also be combined');
+  print('\tStyles can also be combined');
 
   final italicUnderline = termenv.string('italicUnderline').italic().underline();
   final faintCrossOut = termenv.string('faintCrossOut').faint().crossOut();
@@ -42,5 +42,12 @@ void main() {
       termenv.string('boldOnRed').bold().foreground(p.color('0')).background(p.color('#E88388'));
 
   print('\n\t$italicUnderline $faintCrossOut $italicBlue $boldOnRed');
-  print('\n');
+  print('');
+
+  termenv.notify(title: 'Termenv', body: 'Hello World');
+  print('\tTriggered a notification');
+  print('');
+
+  print('\t${termenv.hyperlink(link: 'https://example.com', text: 'This is a link')}');
+  print('');
 }
