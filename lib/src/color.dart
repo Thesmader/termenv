@@ -38,6 +38,9 @@ final class ANSIColor implements Color {
 
     return '${bgMod(c - 8) + 90}';
   }
+
+  @override
+  String toString() => ansiHex[c];
 }
 
 final class ANSI256Color implements Color {
@@ -53,6 +56,9 @@ final class ANSI256Color implements Color {
 
     return '$prefix;5;$value';
   }
+
+  @override
+  String toString() => ansiHex[value];
 }
 
 final class RGBColor implements Color {
@@ -76,6 +82,9 @@ final class RGBColor implements Color {
       return '';
     }
   }
+
+  @override
+  String toString() => hex.startsWith('#') ? hex : '#$hex';
 
   ({int r, int g, int b}) _hexToRGB(String c) {
     c = c.replaceAll('#', '');
