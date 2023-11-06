@@ -1,4 +1,3 @@
-import 'package:termenv/src/profile.dart';
 import 'package:termenv/termenv.dart' as termenv;
 
 void main() {
@@ -50,4 +49,7 @@ void main() {
 
   print('\t${termenv.hyperlink(link: 'https://example.com', text: 'This is a link')}');
   print('');
+
+  print('\tHas foreground color: ${termenv.foregroundColor()}');
+  print('\tHas background color: ${termenv.backgroundColor()}');
 }

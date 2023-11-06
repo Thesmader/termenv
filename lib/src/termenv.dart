@@ -1,3 +1,4 @@
+import 'color.dart';
 import 'output.dart';
 import 'profile.dart';
 
@@ -14,3 +15,6 @@ String hyperlink({required String link, required String text}) =>
 
 void notify({required String title, required String body}) =>
     output.notify(title: title, body: body);
+
+Color? foregroundColor() => output.foregroundColor();
+Color? backgroundColor() => output.backgroundColor();

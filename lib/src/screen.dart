@@ -65,7 +65,7 @@ String seqSetCursorColor(String color) => '12;$color\x07';
 const seqShowCursor = '?25h';
 const seqHideCursor = '?25l';
 
-mixin Screen on Output {
+mixin class Screen {
   /// Reset output to its default style, removing any active styles.
   void reset() => stdout.write('$seqCSI${seqReset}m');
 
